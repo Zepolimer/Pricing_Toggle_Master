@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+/* COLORS */
+/* WEBSITE */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  background-color: #f6f6fe;
+  background-image: url(../../images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: top -35px left 220%;
+  background-size: 70%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+main {
+  width: 90%;
+  margin: 65px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #6d708d;
+}
+
+/* TOGGLE BUTTON */
+.toggleMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px 0 80px 0;
+}
+
+.toggleMenu span {
+  font-weight: 700;
+  color: #b3b5c6;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 32px;
+  margin: 0 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f6f6fe;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(#a3a8f0, #696fdd);
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #f6f6fe;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #b5cde0;
+          box-shadow: 0 0 1px #b5cde0;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(-22px);
+  transform: translateX(-22px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+/* CARDS */
+.card {
+  border-radius: 5px;
+  margin: 34px auto;
+  padding: 38px 28px 30px 28px;
+  -webkit-box-shadow: 2px 2px 15px 5px rgba(139, 139, 139, 0.144);
+          box-shadow: 2px 2px 15px 5px rgba(139, 139, 139, 0.144);
+  font-weight: 600;
+  /* PRICE */
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.card .priceM {
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card .priceM span {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.card .priceM .dollz {
+  font-size: 2.6rem;
+}
+
+.card .paragraphs {
+  border-bottom: 1px solid #b3b5c6;
+  border-top: 1px solid #b3b5c6;
+  margin: 30px 0 34px 0;
+}
+
+.card .wParagraphs {
+  border-bottom: 1px solid #f6f6fe;
+  border-top: 1px solid #f6f6fe;
+  margin: 42px 0 34px 0;
+}
+
+.card p {
+  padding: 18px 0;
+}
+
+.card button {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  outline: transparent;
+  border: transparent;
+  text-transform: uppercase;
+  font-style: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.card button:hover {
+  cursor: pointer;
+  -webkit-transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.4s;
+}
+
+#cardTwo {
+  background: -webkit-gradient(linear, left top, left bottom, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(#a3a8f0, #696fdd);
+  color: #f6f6fe;
+}
+
+#cardTwo .wParagraphs p:nth-child(even) {
+  border-top: 1px solid #f6f6fe;
+  border-bottom: 1px solid #f6f6fe;
+}
+
+#cardTwo button {
+  color: #696fdd;
+  background-color: #f6f6fe;
+}
+
+#cardTwo button:hover {
+  background-color: transparent;
+  color: #f6f6fe;
+  border: 1px solid #f6f6fe;
+}
+
+#cardOne, #cardThree {
+  background: #f6f6fe;
+  color: #6d708d;
+}
+
+#cardOne span, #cardThree span {
+  color: #494c5f;
+}
+
+#cardOne .paragraphs p:nth-child(even), #cardThree .paragraphs p:nth-child(even) {
+  border-top: 1px solid #b3b5c6;
+  border-bottom: 1px solid #b3b5c6;
+}
+
+#cardOne button, #cardThree button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(#a3a8f0, #696fdd);
+  color: #f6f6fe;
+}
+
+#cardOne button:hover, #cardThree button:hover {
+  background: transparent;
+  color: #696fdd;
+  border: 1px solid #696fdd;
+}
+
+/* FOOTER */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/* ***** DESKTOP VERSION ***** */
+@media (min-width: 900px) {
+  body {
+    background-image: url(../../images/bg-bottom.svg), url(../../images/bg-top.svg);
+    background-size: 380px, 400px;
+    background-position: left -30px bottom 0, top -60px right 0;
+    height: 100vh;
+  }
+  main {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    padding: 40px 0 0 0;
+  }
+  .toggleMenu {
+    margin: 30px 0 38px 0;
+  }
+  #cardsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .card {
+    margin: 34px 0px;
+  }
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  .card .wParagraphs {
+    border-bottom: 1px solid #f6f6fe;
+    border-top: 1px solid #f6f6fe;
+    margin: 30px 0 34px 0;
+  }
+  .card .priceM span {
+    font-size: 4.3rem;
+  }
+  .card .priceM .dollz {
+    font-size: 2.2rem;
+  }
+  .card button {
+    height: 42px;
+  }
+  #cardOne, #cardThree {
+    height: 456px;
+    width: 350px;
+  }
+  #cardTwo {
+    height: 500px;
+    width: 350px;
+    padding: 60px 28px 35px 28px;
+  }
+}
+
+/* ***** IPAD PRO ***** */
+@media (min-height: 1360px) {
+  main {
+    padding: 30% 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

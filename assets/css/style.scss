@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* COLORS */
+$LinearGradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+$VeryLightGrayish: hsl(240, 78%, 98%);
+$LightGrayish: hsl(234, 14%, 74%);
+$Grayish: hsl(233, 13%, 49%);
+$DarkGrayish: hsl(232, 13%, 33%);
+
+/* WEBSITE */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    background-color: $VeryLightGrayish;
+    background-image: url(../../images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: top -35px left 220%;
+    background-size: 70%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+main {
+    width: 90%;
+    margin: 65px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: $Grayish;
+}
+
+/* TOGGLE BUTTON */
+.toggleMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 80px 0;
+
+    span { font-weight: 700; color: $LightGrayish; }
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 32px;
+    margin: 0 10px;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $VeryLightGrayish;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+    &::before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    right: 4px;
+    bottom: 4px;
+    background-color: $VeryLightGrayish;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    }
+}
+input:focus + .slider { box-shadow: 0 0 1px #b5cde0; }
+input:checked + .slider:before {
+    -webkit-transform: translateX(-22px);
+    -ms-transform: translateX(-22px);
+    transform: translateX(-22px);
+}
+.slider.round { 
+    border-radius: 34px; 
+    &::before {border-radius: 50%;}
+} 
+
+
+/* CARDS */
+.card {
+    border-radius: 5px;
+    margin: 34px auto;
+    padding: 38px 28px 30px 28px;
+    box-shadow: 2px 2px 15px 5px rgba(139, 139, 139, 0.144);
+    font-weight: 600;
+
+    h2 { font-size: 22px; margin-bottom: 20px; }
+
+    /* PRICE */
+    .priceM {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span { font-size: 5rem; font-weight: 700; }
+        .dollz { font-size: 2.6rem; }
+    }
+
+    .paragraphs {
+        border-bottom: 1px solid $LightGrayish;
+        border-top: 1px solid $LightGrayish;
+        margin: 30px 0 34px 0;
+    }
+    .wParagraphs {
+        border-bottom: 1px solid $VeryLightGrayish;
+        border-top: 1px solid $VeryLightGrayish;
+        margin: 42px 0 34px 0;
+    }
+    p { padding: 18px 0; }
+
+
+    button {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        outline: transparent;
+        border: transparent;
+
+        text-transform: uppercase;
+        font-style: 14px;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+    }
+    button:hover {
+        cursor: pointer;
+        -webkit-transition: ease-in-out 0.4s;
+        transition: ease-in-out 0.4s;
+    }
+}
+
+#cardTwo {
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: $VeryLightGrayish;
+
+    .wParagraphs p:nth-child(even) {
+        border-top: 1px solid $VeryLightGrayish;
+        border-bottom: 1px solid $VeryLightGrayish;
+    }
+    button { 
+        color: hsl(237, 63%, 64%);
+        background-color: $VeryLightGrayish;
+    }
+    button:hover {
+        background-color: transparent;
+        color: $VeryLightGrayish;
+        border: 1px solid $VeryLightGrayish;
+    }
+}
+
+#cardOne, #cardThree {
+    background: $VeryLightGrayish;
+    color: $Grayish;
+
+    span { color: $DarkGrayish;}
+    .paragraphs p:nth-child(even) {
+        border-top: 1px solid $LightGrayish;
+        border-bottom: 1px solid $LightGrayish;
+    }
+    button {
+        background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+        color: $VeryLightGrayish;
+    }
+    button:hover {
+        background: transparent;
+        color: hsl(237, 63%, 64%);
+        border: 1px solid hsl(237, 63%, 64%);
+    }
+}
+
+
+/* FOOTER */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* ***** DESKTOP VERSION ***** */
+@media (min-width: 900px) {
+    body {
+        background-image: url(../../images/bg-bottom.svg), url(../../images/bg-top.svg);
+        background-size: 380px, 400px;
+        background-position: left -30px bottom 0, top -60px right 0;
+        height: 100vh;
+    }
+    main {
+        width: 90%;
+        margin: 0px auto 0px auto;
+        padding: 40px 0 0 0;
+    }
+    .toggleMenu {margin: 30px 0 38px 0;}
+
+    #cardsContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        margin: 34px 0px;
+
+        h2 { font-size: 18px; margin-bottom: 18px; } 
+        .wParagraphs {
+            border-bottom: 1px solid $VeryLightGrayish;
+            border-top: 1px solid $VeryLightGrayish;
+            margin: 30px 0 34px 0;
+        }
+        .priceM {
+            span {font-size: 4.3rem;}
+            .dollz {font-size: 2.2rem;}
+        }
+        button {height: 42px;}
+    }
+    #cardOne, #cardThree {
+        height: 456px;
+        width: 350px;
+    }
+    #cardTwo {
+        height: 500px;
+        width: 350px;
+        padding: 60px 28px 35px 28px;
+    }
+}
+
+/* ***** IPAD PRO ***** */
+@media (min-height: 1360px) {
+    main {
+        padding: 30% 0;
+    }
+}
